@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-gray-800 mb-6"
+          className="text-4xl font-bold text-center mb-6"
         >
           About Historical Artifacts Tracker
         </motion.h1>
@@ -19,7 +19,7 @@ const About = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-lg text-gray-600 leading-relaxed mb-10 text-center"
+          className="text-lg leading-relaxed mb-10 text-center"
         >
           The Historical Artifacts Tracker is a web application designed to help
           history enthusiasts, researchers, and the curious explore and preserve
@@ -31,12 +31,10 @@ const About = () => {
         <div className="grid gap-8 sm:grid-cols-2">
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-white rounded-xl shadow-md border border-gray-200"
+            className="p-6  rounded-xl shadow-md border border-gray-200"
           >
-            <h2 className="text-xl font-semibold text-gray-800 mb-3">
-              Our Mission
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <h2 className="text-xl font-semibold mb-3">Our Mission</h2>
+            <p className=" leading-relaxed">
               We aim to make history accessible and engaging by creating a
               platform where users can not only learn about historical artifacts
               but also contribute their knowledge and discoveries to a global
@@ -46,12 +44,10 @@ const About = () => {
 
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-white rounded-xl shadow-md border border-gray-200"
+            className="p-6  rounded-xl shadow-md border border-gray-200"
           >
-            <h2 className="text-xl font-semibold text-gray-800 mb-3">
-              Key Features
-            </h2>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
+            <h2 className="text-xl font-semibold  mb-3">Key Features</h2>
+            <ul className="list-disc list-inside space-y-1">
               <li>Browse and search historical artifacts</li>
               <li>View detailed artifact information</li>
               <li>Add your own artifact entries</li>
@@ -68,7 +64,7 @@ const About = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-12 text-center"
         >
-          <p className="text-lg text-gray-700">
+          <p className="text-lg ">
             Whether you’re a student, researcher, or just someone fascinated by
             history, the Historical Artifacts Tracker is here to help you
             discover and share the treasures of the past.

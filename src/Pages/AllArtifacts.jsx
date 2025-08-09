@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { url } from "./Home";
 import Loading from "../Components/Loading";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 function AllArtifacts() {
   const [artifacts, setArtifacts] = useState([]);
@@ -83,7 +84,14 @@ function AllArtifacts() {
           </p>
         ) : (
           filteredArtifacts.map((artifact) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
               key={artifact._id}
               className="border rounded-lg shadow-md p-4  hover:shadow-lg transition-shadow duration-200"
             >
@@ -119,14 +127,16 @@ function AllArtifacts() {
                 {artifact.discoveredBy}
               </p>
               <Link to={`/artifact/${artifact._id}`}>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                   className="w-full btn  py-2 px-4 rounded-md text-white font-medium transition-colors duration-200 hover:bg-[#4a0a7a]"
                   style={{ backgroundColor: "#610d99bd" }}
                 >
                   View Details
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           ))
         )}
       </div>

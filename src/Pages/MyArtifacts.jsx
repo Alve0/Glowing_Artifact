@@ -4,6 +4,7 @@ import Loading from "../Components/Loading";
 import { Link } from "react-router";
 import { use } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { motion } from "framer-motion";
 
 function MyArtifacts() {
   const [artifacts, setArtifacts] = useState([]);
@@ -112,9 +113,16 @@ function MyArtifacts() {
           </p>
         ) : (
           filteredArtifacts.map((artifact) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
               key={artifact._id}
-              className="border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200"
+              className="border rounded-lg shadow-md p-4  hover:shadow-lg transition-shadow duration-200"
             >
               {artifact.imageUrl && (
                 <img
@@ -148,25 +156,33 @@ function MyArtifacts() {
                 {artifact.discoveredBy}
               </p>
               <Link to={`/artifact/${artifact._id}`}>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 1.05 }}
                   className="w-full btn py-2 px-4 rounded-md text-white font-medium transition-colors duration-200 hover:bg-[#4a0a7a]"
                   style={{ backgroundColor: "#610d99bd" }}
                 >
                   View Details
-                </button>
+                </motion.button>
               </Link>
-              <button
-                className="btn w-full bg-red-600 mt-2"
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1.05 }}
+                className="btn w-full bg-red-600 mt-2 text-white"
                 onClick={() => handleDelete(artifact._id)}
               >
                 Delete
-              </button>
+              </motion.button>
               <Link to={`/udpate-artifact/${artifact._id}`}>
-                <button className="btn w-full text-white mt-2  bg-blue-600">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 1.05 }}
+                  className="btn w-full text-white mt-2  bg-blue-600"
+                >
                   Update
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           ))
         )}
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import Loading from "../Components/Loading";
 import { url } from "./Home";
+import { motion } from "framer-motion";
 
 function TopArtifact() {
   const [recipes, setRecipes] = useState([]);
@@ -45,11 +46,8 @@ function TopArtifact() {
   }
 
   return (
-    <div className="min-h-screen p-6 transition-colors duration-200">
-      <h1
-        className="text-3xl font-bold text-center mb-4"
-        style={{ color: "#610d99bd" }}
-      >
+    <motion.div className="min-h-screen p-6 transition-colors duration-200">
+      <h1 className="text-3xl font-bold text-center mb-4 text-purple-700 ">
         Top 6 Recipes
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,7 +55,10 @@ function TopArtifact() {
           <p className="text-center text-lg col-span-full">No recipes found.</p>
         ) : (
           recipes.map((recipe) => (
-            <div
+            <motion.div
+              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
               key={recipe._id}
               className="border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200"
             >
@@ -83,18 +84,20 @@ function TopArtifact() {
                 <span className="font-medium">Likes:</span> {recipe.like || 0}
               </p>
               <Link to={`/artifact/${recipe._id}`}>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                   className="w-full btn py-2 px-4 rounded-md text-white font-medium transition-colors duration-200 hover:bg-[#4a0a7a]"
                   style={{ backgroundColor: "#610d99bd" }}
                 >
                   View Details
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           ))
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
