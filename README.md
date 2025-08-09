@@ -34,14 +34,8 @@ This project is a web application for tracking and managing historical artifacts
 - `tailwind-merge`: To merge Tailwind CSS classes without conflicts.
 - `react-icons`: For various icons used throughout the website.
 
-### Server-side
-
-- `express`: The web application framework for Node.js.
-- `cors`: To handle Cross-Origin Resource Sharing.
-- `mongodb`: The official MongoDB driver for Node.js.
-- `jsonwebtoken`: For creating and verifying JWT tokens.
-- `dotenv`: To load environment variables from a `.env` file.
-
 ### Update
 
 - Added about section, logout user now has 3 navigations and login user has 6 navigations
+- Added animation thoughout the webpage
+- Added Sorting system in all artifacts page
