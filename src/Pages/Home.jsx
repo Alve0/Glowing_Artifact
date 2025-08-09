@@ -5,8 +5,8 @@ import Navber from "../Components/NavberAndFooter/Navber";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../Provider/AuthProvider";
 import Loading from "../Components/Loading";
-// export const url = "https://glowing-artifact.vercel.app";
-export const url = " http://localhost:5000";
+export const url = "https://glowing-artifact.vercel.app";
+// export const url = " http://localhost:5000";
 
 function Home() {
   const { loading } = use(AuthContext);
