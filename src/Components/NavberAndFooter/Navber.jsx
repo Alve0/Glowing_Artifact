@@ -38,6 +38,9 @@ function Navbar() {
           <NavLink to="/add-artifacts">Add Artifacts</NavLink>
         </li>
       )}
+      <li>
+        <NavLink to="/about">About</NavLink>
+      </li>
     </>
   );
 

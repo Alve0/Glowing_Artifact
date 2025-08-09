@@ -13,6 +13,7 @@ import Details from "../Pages/Details";
 import MyArtifacts from "../Pages/MyArtifacts";
 import Update from "../Pages/Update";
 import LikedArtifacts from "../Pages/LikedArtifacts";
+import About from "../Pages/About";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
             <LikedArtifacts />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/about",
+        Component: About,
       },
     ],
   },
